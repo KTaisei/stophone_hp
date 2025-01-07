@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout title="ブログ - アプリ名">
+  <main>
+    <nav class="nav">
+      <div class="nav-content">
+        <div class="logo">Stophone</div>
+        <div class="nav-links">
+          <a href="/">ホーム</a>
+          <a href="/blog">ブログ</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+    </nav>
+
+    <h1>ブログ記事一覧</h1>
+    <div class="posts-grid">
+      {posts.map(post => (
+        <article class="post-card">
+          <h2>
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          </h2>
+          <p class="description">{post.data.description}</p>
+          <div class="post-meta">
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('ja-JP')}
+            </time>
+            <span class="author">{post.data.author}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --primary-color: #6366f1;
+    --text-color: #1f2937;
+    --background-color: #ffffff;
+    --section-padding: 4rem 2rem;
+  }
+
+  main {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 1rem 0;
+  }
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .nav-links a {
+    margin-left: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--section-padding);
+  }
+
+  .post-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .post-card h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .post-card h2 a:hover {
+    color: var(--primary-color);
+  }
+
+  .description {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .post-meta {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
