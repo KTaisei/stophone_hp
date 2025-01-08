@@ -23,11 +23,11 @@ const recentPosts = allPosts
 		</nav>
 
 		<section class="hero">
-			<h1>シンプルで<span class="accent">使いやすい</span><br/>アプリケーション</h1>
-			<p class="subtitle">あなたの日常をもっと便利に、もっとスマートに</p>
+			<h1>安全な未来をあなたと共に</h1>
+			<p class="subtitle">歩きスマホを防ぎ、安心な日常をサポート</p>
 			<div class="cta-buttons">
 				<a href="#download" class="button primary">ダウンロード</a>
-				<a href="/blog" class="button secondary">詳しく見る</a>
+				<a href="/blog" class="button secondary">最新情報はこちら</a>
 			</div>
 		</section>
 
@@ -36,24 +36,48 @@ const recentPosts = allPosts
 			<div class="feature-grid">
 				<div class="feature-card">
 					<div class="icon">✨</div>
-					<h3>シンプルな操作性</h3>
-					<p>直感的なUIで誰でも簡単に使えます</p>
+					<h3>リアルタイム検知</h3>
+					<p>内蔵センサーを活用して、歩行中のスマホ操作を正確に検知します。</p>
 				</div>
 				<div class="feature-card">
-					<div class="icon">🚀</div>
-					<h3>高速な処理</h3>
-					<p>最新技術で快適なパフォーマンスを実現</p>
+					<div class="icon">🚨</div>
+					<h3>警告通知機能</h3>
+					<p>歩きスマホを検知した際に、アプリが即座に警告を通知し、注意を促します。</p>
 				</div>
 				<div class="feature-card">
 					<div class="icon">🔒</div>
-					<h3>安全性</h3>
-					<p>セキュリティを重視した設計</p>
+					<h3>バックグラウンド実行</h3>
+					<p>アプリを閉じても、バックグラウンドで動作し、常に安全を見守ります。</p>
+				</div>
+				<div class="feature-card">
+					<div class="icon">⚡️</div>
+					<h3>軽量・省エネ設計</h3>
+					<p>電池消耗を最小限に抑えながら、快適に利用可能です。</p>
 				</div>
 			</div>
 		</section>
 
 		<section id="about" class="about">
 			<h2>アプリについて</h2>
+			<h3>Who is developed?</h3>
+
+			<div class="developer-card">
+				<img src="../profile.JPG" alt="Developer Photo" class="developer-photo" />
+				<h2 class="developer-name">川上 泰正</h2>
+				<p class="developer-role">フロントエンドエンジニア</p>
+				<p class="developer-bio">
+				  普段はweb開発やpythonでの機械学習を行っています。趣味はアニメ鑑賞です。
+				</p>
+				<div class="developer-links">
+				  <a href="https://github.com/ktaisei" target="_blank">GitHub</a>
+				  <a href="https://x.com/Yasumasascience" target="_blank">Twitter</a>
+				  <a href="https://ktaisei.github.io/official/" target="_blank">Portfolio</a>
+				</div>
+			</div>
+			
+			<h3>What can this app?</h3>
+
+
 			<p>
 				このアプリは、ユーザーの日常をより便利にすることを目指して開発されました。
 				最新のテクノロジーと使いやすさを両立し、誰もが簡単に使えるアプリケーションを提供します。
@@ -304,4 +328,74 @@ const recentPosts = allPosts
 			grid-template-columns: 1fr;
 		}
 	}
+
+	.developer-card {
+	background-color: var(--background-color);
+	border-radius: 1rem;
+	padding: 2rem;
+	box-shadow: 0 4px 6px -1px var(--card-shadow);
+	max-width: 400px;
+	margin: 1rem auto;
+	text-align: center;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.developer-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px -1px var(--card-shadow);
+	}
+
+	.developer-photo {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 1rem;
+	border: 2px solid var(--primary-color);
+	}
+
+	.developer-name {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 0.5rem 0;
+	color: var(--text-color);
+	}
+
+	.developer-role {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--primary-color);
+	margin-bottom: 1rem;
+	}
+
+	.developer-bio {
+	font-size: 0.9rem;
+	color: #6b7280;
+	margin-bottom: 1.5rem;
+	}
+
+	.developer-links {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	}
+
+	.developer-links a {
+	text-decoration: none;
+	color: var(--primary-color);
+	font-size: 0.9rem;
+	font-weight: 500;
+	border: 1px solid var(--primary-color);
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	.developer-links a:hover {
+	background-color: var(--primary-color);
+	color: var(--background-color);
+	}
+
+	
+	
 </style>
