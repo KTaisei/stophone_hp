@@ -24,7 +24,7 @@ const recentPosts = allPosts
 
 		<section class="hero">
 			<h1>安全な未来をあなたと共に</h1>
-			<p class="subtitle">歩きスマホを防ぎ、安心な日常をサポート</p>
+			<p class="subtitle">明日の未来を小さなスマホから、あなたのその一歩を変えていく。</p>
 			<div class="cta-buttons">
 				<a href="#download" class="button primary">ダウンロード</a>
 				<a href="/blog" class="button secondary">最新情報はこちら</a>
@@ -77,10 +77,41 @@ const recentPosts = allPosts
 			
 			<h3>What can this app?</h3>
 
+			<section class="features-section">
+				<div class="feature-item">
+				  <div class="feature-content">
+					<h2 class="feature-title">歩行の検出</h2>
+					<p class="feature-description">
+					  この機能では、独自アルゴリズムを使用して歩行中のスマホ操作を検出し、通知を送信します。
+					</p>
+				  </div>
+				  <img src="../notification.jpeg" alt="Feature 1" class="feature-image" />
+				</div>
+				<div class="feature-item">
+				  <div class="feature-content">
+					<h2 class="feature-title">歩行の判定</h2>
+					<p class="feature-description">
+					  リアルタイムで現在の運動状態を判定し、表示します。
+					</p>
+				  </div>
+				  <img src="../judg.jpeg" alt="Feature 2" class="feature-image" />
+				</div>
+				<div class="feature-item">
+				  <div class="feature-content">
+					<h2 class="feature-title">カウント機能</h2>
+					<p class="feature-description">
+					  今までの歩行回数をカウントし、歩きスマホの傾向を分析できます。
+					</p>
+				  </div>
+				  <img src="../number.jpeg" alt="Feature 3" class="feature-image" />
+				</div>
+			  </section>
+
 
 			<p>
-				このアプリは、ユーザーの日常をより便利にすることを目指して開発されました。
-				最新のテクノロジーと使いやすさを両立し、誰もが簡単に使えるアプリケーションを提供します。
+				全ての人が、安心安全な日常を過ごせるよう、Stophoneは日々進化し続けます。
+				<br>明日の未来を小さなスマホから
+				<br>あなたのその一歩を変えていく。
 			</p>
 		</section>
 
@@ -122,6 +153,7 @@ const recentPosts = allPosts
 		--text-color: #1f2937;
 		--background-color: #ffffff;
 		--section-padding: 4rem 2rem;
+		--border-color: #162337;
 	}
 
 	main {
@@ -396,6 +428,70 @@ const recentPosts = allPosts
 	color: var(--background-color);
 	}
 
-	
+
+
+	.features-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+	background-color: var(--background-color);
+	}
+
+	.feature-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+	background-color: var(--background-color);
+	border: 2px solid var(--border-color); /* 枠線を追加 */
+	border-radius: 1rem; /* 角を丸める */
+	box-shadow: 0 4px 6px -1px var(--card-shadow);
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	}
+
+	.feature-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px -1px var(--card-shadow);
+	border-color: var(--primary-color); /* ホバー時の枠線色変更 */
+	}
+
+	.feature-content {
+	flex: 1;
+	padding: 1.5rem;
+	}
+
+	.feature-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--text-color);
+	margin-bottom: 0.5rem;
+	}
+
+	.feature-description {
+	font-size: 1rem;
+	color: var(--secondary-text-color);
+	line-height: 1.6;
+	}
+
+	.feature-image {
+	flex: 1;
+	max-width: 50%;
+	object-fit: cover;
+	border-radius: 0.5rem;
+	}
+
+	/* スマホや小さな画面対応 */
+	@media (max-width: 768px) {
+	.feature-item {
+		flex-direction: column;
+	}
+
+	.feature-image {
+		max-width: 100%;
+		width: 100%;
+	}
+	}
 	
 </style>
