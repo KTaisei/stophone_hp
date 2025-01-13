@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout title="thanks">
+    <main class="thank-you-section">
+      <h1 class="thank-you-title">Thank You!</h1>
+      <p class="thank-you-message">
+        送信していただいたメッセージは正常に送信されました。<br>お問い合わせいただきありがとうございます。<br>返信まで少々お待ちください。
+      </p>
+      <a href="/" class="back-to-home-button">Back to Home</a>
+    </main>
+</Layout>
+
+<style>
+    .thank-you-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px -1px var(--card-shadow);
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+    }
+
+    .thank-you-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    }
+
+    .thank-you-message {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 2rem;
+    }
+
+    .back-to-home-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    }
+
+    .back-to-home-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    }
+
+    @media (max-width: 768px) {
+    .thank-you-section {
+        padding: 1.5rem;
+    }
+
+    .thank-you-title {
+        font-size: 1.5rem;
+    }
+
+    .thank-you-message {
+        font-size: 1rem;
+    }
+
+    .back-to-home-button {
+        padding: 0.6rem 1.2rem;
+    }
+    }
+</style>

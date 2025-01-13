@@ -17,7 +17,7 @@ const recentPosts = allPosts
 					<a href="#features">機能</a>
 					<a href="#about">概要</a>
 					<a href="/blog">ブログ</a>
-					<a href="#contact">お問い合わせ</a>
+					<a href="/contact">お問い合わせ</a>
 				</div>
 			</div>
 		</nav>
@@ -106,11 +106,26 @@ const recentPosts = allPosts
 				  <img src="../number.jpeg" alt="Feature 3" class="feature-image" />
 				</div>
 			  </section>
+			
+			<div class="link-card-container">
+				<a href="https://github.com/KTaisei/stophone" class="link-card">
+				  <div class="link-card-title">Github</div>
+				  <div class="link-card-description">
+					このアプリはオープンソースです。誰もが自由に編集し、新しい機能を追加することができます。
+				  </div>
+				</a>
+				<a href="https://github.com/KTaisei/stophone_support" class="link-card">
+				  <div class="link-card-title">Stophone Support</div>
+				  <div class="link-card-description">
+					このアプリを開発すsる上で、開発支援アプリを開発しました。詳細はこちらから。
+				  </div>
+				</a>
+			</div>
 
 
 			<p>
 				全ての人が、安心安全な日常を過ごせるよう、Stophoneは日々進化し続けます。
-				<br>明日の未来を小さなスマホから
+				<br>明日の未来を小さなアプリから
 				<br>あなたのその一歩を変えていく。
 			</p>
 		</section>
@@ -142,7 +157,7 @@ const recentPosts = allPosts
 			<p>
 				ご質問やフィードバックがございましたら、お気軽にお問い合わせください。
 			</p>
-			<a href="mailto:contact@example.com" class="button primary">メールを送る</a>
+			<a href="/contact" class="button primary">メールを送る</a>
 		</section>
 	</main>
 </Layout>
@@ -491,6 +506,58 @@ const recentPosts = allPosts
 	.feature-image {
 		max-width: 100%;
 		width: 100%;
+	}
+	}
+
+	.link-card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1.5rem;
+	padding: 1rem;
+	}
+
+	.link-card {
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem;
+	background-color: var(--background-color);
+	border: 2px solid var(--border-color);
+	border-radius: 1rem;
+	text-decoration: none;
+	color: var(--text-color);
+	box-shadow: 0 4px 6px -1px var(--card-shadow);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.link-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 10px -1px var(--card-shadow-hover);
+	}
+
+	.link-card-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--primary-color);
+	margin-bottom: 0.5rem;
+	}
+
+	.link-card-description {
+	font-size: 1rem;
+	color: var(--secondary-text-color);
+	line-height: 1.5;
+	}
+
+	@media (max-width: 768px) {
+	.link-card {
+		padding: 1rem;
+	}
+
+	.link-card-title {
+		font-size: 1.2rem;
+	}
+
+	.link-card-description {
+		font-size: 0.9rem;
 	}
 	}
 	
