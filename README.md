@@ -1,54 +1,115 @@
-# Astro Starter Kit: Basics
+# 技術スタック
 
-```sh
-npm create astro@latest -- --template basics
-```
+このサイトはAstroを中心に構築されており、シンプルかつ高速なウェブ体験を提供するための最新技術を採用しています。以下に、プロジェクトで使用されている主要な技術スタックをまとめます。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## フロントエンド
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### 1. **Astro**
+- フレームワーク: Astroは、コンテンツ優先の静的サイト生成フレームワークです。
+- 特徴:
+  - 静的ファイル生成による高速表示。
+  - 組み込みのMarkdownサポート。
+  - コンポーネント駆動型開発のサポート（React, Vue, Svelte, etc.）。
 
-## 🚀 Project Structure
+### 2. **Tailwind CSS**
+- CSSフレームワーク: ユーティリティファーストのCSSフレームワーク。
+- 特徴:
+  - クラスベースで簡単にデザインを作成。
+  - Tailwind Typographyプラグインを使用して、Markdownコンテンツのスタイリングを最適化。
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## バックエンド（ビルド時）
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 1. **Node.js**
+- 環境: Astroのビルドプロセスや開発サーバーの動作に使用。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 2. **Markdown**
+- コンテンツ: ブログ記事やドキュメントはMarkdown形式で作成。
+- 特徴: シンプルな構造とコンテンツ管理のしやすさ。
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## デプロイ
 
-All commands are run from the root of the project, from a terminal:
+### 1. **GitHub Pages**
+- ホスティングサービス: GitHub Pagesを使用して静的サイトをホスティング。
+- 特徴:
+  - GitHubリポジトリとの統合。
+  - 自動デプロイワークフロー。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 2. **GitHub Actions**
+- CI/CDツール: コードの変更を検出し、ビルドとデプロイを自動化。
+- 特徴:
+  - プッシュ時の自動ビルド。
+  - Astroによる静的ファイル生成とGitHub Pagesへのデプロイ。
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## プラグイン
+
+### 1. **Tailwind Typography**
+- Markdownのデザインを洗練させるためのプラグイン。
+- 特徴:
+  - 見出し、リスト、リンク、コードブロックなどの一貫したスタイル。
+
+---
+
+## 開発ツール
+
+### 1. **VS Code**
+- IDE: コード編集に使用。
+- 特徴: 拡張機能によるカスタマイズ性。
+
+### 2. **ESLint & Prettier**
+- コード品質ツール: 一貫したコードスタイルを維持。
+- 特徴: 自動フォーマットとエラー検出。
+
+---
+
+## 使用ライブラリ・パッケージ
+
+### 1. **sensors_plus**
+- 機能: 加速度センサーのデータ取得。
+- 特徴: モバイルアプリケーションのセンサーデータ処理に特化。
+
+### 2. **flutter_background**
+- 機能: アプリケーションのバックグラウンド動作を管理。
+- 特徴: スマートフォン向け機能。
+
+### 3. **flutter_local_notifications**
+- 機能: ローカル通知の送信。
+- 特徴: ユーザーに警告や情報を効果的に伝達。
+
+---
+
+## デザイン
+
+### 1. **レスポンシブデザイン**
+- Tailwind CSSを活用して、スマートフォンやタブレットなどのさまざまなデバイスに対応。
+
+### 2. **シンプルで直感的なUI**
+- カードレイアウトや分かりやすいナビゲーションを採用。
+- ユーザーが目的の情報にすぐアクセスできる構造。
+
+---
+
+## 特徴的な機能
+
+- Markdownコンテンツを美しく表示するカスタムデザイン。
+- 高速なビルドプロセスと静的サイト生成。
+- ユーザーの視覚的な体験を向上させるための詳細なCSS設計。
+
+---
+
+## 今後の予定
+
+- コンテンツ管理システム（CMS）の導入。
+- 検索機能やフィードバックフォームの実装。
+- パフォーマンス最適化のさらなる追求。
+
+---
+
+この技術スタックにより、シンプルかつ効率的な開発を実現し、スケーラブルなウェブサイトを提供しています。
