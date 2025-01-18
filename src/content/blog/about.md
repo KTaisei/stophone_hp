@@ -139,4 +139,4 @@ flutter_backgroundパッケージを使用して、アプリがバックグラ�
 - 通知機能:
     - バックグラウンド動作時に通知が届くようにするため、Androidの特定の権限が必要。
 - 感度調整:
-    - ` _sensitivity`変数及び、`averageVariation`変数を調整することで、誤検知を防ぎつつ正確な判定が可能。
+    - ` _sensitivity`変数及び、`averageVariation`変数を調整することで、誤検知を防ぎつつ正確な判定が可能
